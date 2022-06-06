@@ -93,73 +93,44 @@ class _HomeScreenState extends  State<HomeScreen> {
           ),
 
         ],
-      )
-     /* body: Column(
-        children: [
-          CarouselSlider(
-            options: CarouselOptions(
-              autoPlay: true,
-              // enlargeCenterPage: true,
-              //scrollDirection: Axis.vertical,
-              onPageChanged: (index, reason) {
-                setState(
-                      () {
-                    _currentIndex = index;
-                  },
-                );
-              },
-            ),
-            items: imagesList
-                .map(
-                  (item) => Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Card(
-                  margin: EdgeInsets.only(
-                    top: 10.0,
-                    bottom: 10.0,
-                  ),
-                  elevation: 6.0,
-                  shadowColor: Colors.redAccent,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30.0),
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(30.0),
-                    ),
-                    child: Stack(
-                      children: <Widget>[
+      ),
 
-                        Image.asset('assets/images/slidar1.png',fit: BoxFit.cover,width: double.infinity),
-                        Image.asset('assets/images/slidar2.png',fit: BoxFit.cover,width: double.infinity)
 
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            )
-                .toList(),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: imagesList.map((urlOfItem) {
-              int index = imagesList.indexOf(urlOfItem);
-              return Container(
-                width: 10.0,
-                height: 10.0,
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: _currentIndex == index
-                      ? Color.fromRGBO(0, 0, 0, 0.8)
-                      : Color.fromRGBO(0, 0, 0, 0.3),
-                ),
-              );
-            }).toList(),
-          )
-        ],
-      ),*/
+      bottomNavigationBar: BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
+      // currentIndex: _currentIndex,
+      // backgroundColor: colorScheme.surface,
+      // selectedItemColor: colorScheme.onSurface,
+      // unselectedItemColor: colorScheme.onSurface.withOpacity(.60),
+      // selectedLabelStyle: textTheme.caption,
+      // unselectedLabelStyle: textTheme.caption,
+      onTap: (value) {
+        // Respond to item press.
+        setState(() => _currentIndex = value);
+      },
+      items: [
+        BottomNavigationBarItem(
+          label:('Home'),
+          icon: Icon(Icons.home),
+        ),
+        BottomNavigationBarItem(
+          label: ('Profile'),
+          icon: Icon(Icons.person),
+        ),
+        BottomNavigationBarItem(
+          label: ('Shop'),
+          icon: Icon(Icons.account_circle),
+        ),
+        BottomNavigationBarItem(
+          label: ('Cart'),
+          icon: Icon(Icons.add_shopping_cart),
+        ),
+        BottomNavigationBarItem(
+          label: ('More'),
+          icon: Icon(Icons.article_outlined),
+        ),
+      ],
+    ),
     );
     // );
   }
