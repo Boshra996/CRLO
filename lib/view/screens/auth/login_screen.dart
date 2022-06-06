@@ -1,3 +1,4 @@
+import 'package:crlo/view/screens/home_screen.dart';
 import 'package:crlo/view/widgets/rounded_button.dart';
 import 'package:crlo/view/widgets/rounded_input_field.dart';
 import 'package:crlo/view/widgets/rounded_password_field.dart';
@@ -52,11 +53,15 @@ class LoginScreen extends StatelessWidget{
             ),
             RoundedButton(
               text: "LOGIN",
-              press: () {},
+              press: () {
+                Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) =>HomeScreen()));
+              },
             ),
             RoundedButton(
-              text: "LOGIN As A Guest",
-              press: () {},
+              text: "Continue As A Guest",
+              press: () {
+                Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) =>HomeScreen()));
+              },
             ),
             SizedBox(height: size.height * 0.03),
 
